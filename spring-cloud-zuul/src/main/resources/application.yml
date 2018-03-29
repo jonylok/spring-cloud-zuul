@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.253.27.237:6001/daojiaeureka/eureka/
+server:
+  port: 8080
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: spring-cloud-producer
+    api-b:
+      path: /api-b/**
+      serviceId: spring-cloud-producer1
